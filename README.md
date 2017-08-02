@@ -2,7 +2,6 @@
 Automatic Go/Baduk/Weiqi recorder
 
 Python 3.5+
-
 OpenCV 3.2.0+
 
 

@@ -1,6 +1,7 @@
 import numpy as np
 import argparse
 import cv2
+import copy
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -28,9 +29,16 @@ for c in cnts:
 	if len(approx) == 4:
 		screenCnt = approx
 		break
+	image2 = copy.copy(image)
+	image3 = image
+	cv2.drawContours(image2, [approx], -1, (0, 255, 0), 3)
+	cv2.imshow("test", image2)	
+	cv2.waitKey(0)
+	cv2.destroyWindow("test")
 
 
-
+'''
 cv2.drawContours(image, [cnts[0]], -1, (0, 255, 0), 3)
-cv2.imshow("Game Boy Screen", image)
+cv2.imshow("test", image)
 cv2.waitKey(0)
+'''

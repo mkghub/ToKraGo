@@ -1,13 +1,11 @@
-import numpy as np
+"""Automatic Go/Baduk/Weiqi recorder."""
 import argparse
 import cv2
-import copy
 from edge import EdgeGoban
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument('--image', required=True,
-        help='Path to the input image.')
+    ap.add_argument('--image', required=True, help='Path to the input image.')
     args = vars(ap.parse_args())
 
     image = cv2.imread(args['image'])

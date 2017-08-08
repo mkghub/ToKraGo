@@ -18,6 +18,6 @@ if __name__ == "__main__":
 	closed = cv2.morphologyEx(edged, cv2.MORPH_CLOSE, kernel)
 
 	#CountourGoban(edged, image)
-	#HoughGoban(edged, image)
+	#HoughGoban(closed, image)
 
-	ShowImage([closed, image], ["closed", "image"])
+	ShowImage([closed, image, CountourGoban(closed, image)], ["closed", "image", "Contour"])

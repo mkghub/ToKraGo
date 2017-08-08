@@ -9,10 +9,9 @@ def CountourGoban(edged, image):
     max_index = np.argmax(areas)
     cnt = cnts[max_index]
 
-    cv2.drawContours(image, [cnt], -1, (0, 255, 0), 3)
-    cv2.imshow("test", image)
-    cv2.waitKey(0)
-    cv2.destroyWindow("test")
+    imgCnt = cv2.drawContours(image.copy(), [cnt], -1, (0, 255, 0), 3)
+    return(imgCnt)
+
 
 def HoughGoban(edged,image):
     lines = cv2.HoughLines(edged,1,np.pi/180,180)
@@ -29,10 +28,7 @@ def HoughGoban(edged,image):
 
         cv2.line(image,(x1,y1),(x2,y2),(0,0,255),2)
 
-    cv2.imshow("test", image)
-    cv2.imshow("edged", edged)
-    cv2.waitKey(0)
-    cv2.destroyWindow("test")
+    return(image)
 
 
 def ShowImage(images, imageWindowNames):

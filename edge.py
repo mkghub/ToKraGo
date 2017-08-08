@@ -33,3 +33,10 @@ def HoughGoban(edged,image):
     cv2.imshow("edged", edged)
     cv2.waitKey(0)
     cv2.destroyWindow("test")
+
+
+def ShowImage(images, imageWindowNames):
+    for image, imageWindowName in zip(images, imageWindowNames):
+        cv2.imshow(imageWindowName, image)
+    cv2.waitKey(0)
+    cv2.destroyWindow(imageWindowName)

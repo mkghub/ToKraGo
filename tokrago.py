@@ -1,7 +1,8 @@
 """Automatic Go/Baduk/Weiqi recorder."""
 import argparse
 import cv2
-from edge import EdgeGoban
+import numpy as np
+from edge import CountourGoban, HoughGoban
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
@@ -10,8 +11,8 @@ if __name__ == "__main__":
 
     image = cv2.imread(args['image'])
     image = cv2.bilateralFilter(image, 11, 17, 17)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    edged = cv2.Canny(gray, 50, 150,apertureSize = 3)
 
-    cv2.drawContours(image, [EdgeGoban(image)], -1, (0, 255, 0), 3)
-    cv2.imshow("test", image)
-    cv2.waitKey(0)
-    cv2.destroyWindow("test")
+    #CountourGoban(edged, image)
+    HoughGoban(edged, image)

@@ -1,7 +1,7 @@
 # ToKraGo
 Automatic Go/Baduk/Weiqi recorder
 
-Python 3.6, OpenCV 3.2
+Python 3.6, OpenCV 3.4.1
 
 ## Setting up dev environment on WIN machine
 Images are stored via [git lfs](https://git-lfs.github.com/).

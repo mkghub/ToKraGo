@@ -35,3 +35,13 @@ def show_image(images, imageWindowNames):
         cv2.imshow(imageWindowName, image)
     cv2.waitKey(0)
     cv2.destroyWindow(imageWindowName)
+
+
+def get_image_edges(image, binary_threshold=(0, 255), canny_threshold=(0, 200)):
+    _, thresh = cv2.threshold(image, binary_threshold[0], binary_threshold[1], 0)
+    thresh_blurred = cv2.GaussianBlur(thresh, (3, 3), 0)
+    edges = cv2.Canny(thresh_blurred, canny_threshold[0], canny_threshold[1])
+
+    return edges
+
+

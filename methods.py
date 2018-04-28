@@ -29,7 +29,8 @@ def hough_goban(edged, image):
 
     return image
 
-def get_image_edges(image, binary_threshold=(0, 255), canny_threshold=(0, 200)):
+
+def get_image_edges(image, binary_threshold=(0, 255), canny_threshold=(50, 150)):
     _, thresh = cv2.threshold(image, binary_threshold[0], binary_threshold[1], 0)
     thresh_blurred = cv2.GaussianBlur(thresh, (3, 3), 0)
     edges = cv2.Canny(thresh_blurred, canny_threshold[0], canny_threshold[1])

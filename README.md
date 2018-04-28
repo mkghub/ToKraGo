@@ -1,7 +1,7 @@
 # ToKraGo
 Automatic Go/Baduk/Weiqi recorder
 
-Python 3.5+, OpenCV 3.2.0+
+Python 3.6, OpenCV 3.2
 
 
 # Similar projects and info topics

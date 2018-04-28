@@ -3,6 +3,26 @@ Automatic Go/Baduk/Weiqi recorder
 
 Python 3.6, OpenCV 3.2
 
+## Setting up dev environment on WIN machine
+Images are stored via [git lfs](https://git-lfs.github.com/).
+Install it via:
+```
+git lfs install
+```
+
+
+```
+chodo install anaconda3 -y
+cd ~/tokrago
+conda config --add channels conda-forge
+conda env create -f environment.yml
+```
+
+Activate/deactivate conda environment:
+```
+activate tokrago
+deactivate
+```
 
 # Similar projects and info topics
 
